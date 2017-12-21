@@ -14,4 +14,7 @@ services:
 networks:
   database:
     external:
+      # External network name, automatically named with docker-compose
+      # to <mariadb_directory>_default. Run `docker networks ls` for
+      # the list.
       name: mariadb_default
