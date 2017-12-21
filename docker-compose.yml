@@ -1,0 +1,17 @@
+version: "3"
+services:
+  app:
+    image: ruby-mysql-socket
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+    external_links:
+      - db
+    networks:
+      - database
+    tty: true
+networks:
+  database:
+    external:
+      name: mariadb_default
