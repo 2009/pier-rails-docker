@@ -40,3 +40,9 @@ docker-compose exec app bundle install
 docker-compose exec app rails s -b 0.0.0.0
 docker-compose exec bundle exec rake db:migrate
 ```
+
+## Fresh container instance
+
+```
+docker-compose down
+```
