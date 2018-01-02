@@ -6,10 +6,11 @@ services:
       - 3000:3000
     volumes:
       - .:/app
-    external_links:
-      - db
+    # Networks this service will join, this allows access to the
+    # networks services though hostname matching the service name.
     networks:
       - database
+      - elasticsearch
     tty: true
 networks:
   database:
@@ -18,3 +19,12 @@ networks:
       # to <mariadb_directory>_default. Run `docker networks ls` for
       # the list.
       name: mariadb_default
+
+  # NOTE You must connect to elasticsearch using the hostname: elasticsearch
+  elasticsearch:
+    external:
+      # External network name, automatically named with docker-compose
+      # to <mariadb_directory>_default. Run `docker networks ls` for
+      # the list.
+      name: elasticsearch_default
+

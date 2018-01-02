@@ -14,12 +14,20 @@ Clone the database repo and start it running:
 
 ```
 git clone git@github.com:2009/mariadb-docker.git mariadb
-cd mariadb-docker
+cd mariadb
 docker-compose up -d
 ```
 
 > NOTE: Mysql data is stored in the `mysql` directory, you can copy
 > existing mysql data `/var/lib/mysql` to this folder.
+
+Clone the elasticsearch repo and start it running:
+
+```
+git clone git@github.com:2009/elasticsearch-docker-compose.git elasticsearch
+cd elasticsearch
+docker-compose up -d
+```
 
 Copy the `docker-compose.yml` file into the root of the rails
 application and update the external port by changing `3000:3000`
